@@ -1,6 +1,9 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h3>{{$store.getters.title}}</h3>
+  <h3>{{$store.getters.fullTitle}}</h3>
+  <!-- <h3>{{stateMessage}}</h3> -->
 </template>
 
 <script>
@@ -10,6 +13,11 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  computed:{
+    stateMessage(){
+      return this.$store.getters.fullTitle
+    }
   }
 }
 </script>
